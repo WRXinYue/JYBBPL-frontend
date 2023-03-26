@@ -1,4 +1,5 @@
 module.exports = {
+  ignorePatterns: ['*/jquery.min.js', '*/lib/*', '*/vendor/*'], // 忽略检查jQuery文件
   env: {
     browser: true,
     es2021: true,
@@ -13,6 +14,8 @@ module.exports = {
     defineProps: true,
     defineExpose: true,
     withDefaults: true,
+    $: true, // 添加对jQuery的支持
+    jQuery: true,
   },
   extends: [
     './.eslintrc-auto-import.json',
