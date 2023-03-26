@@ -18,4 +18,6 @@ $(document).ready(function () {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '@/assets/styles/index.scss';
+</style>
