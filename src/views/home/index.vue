@@ -17,5 +17,5 @@ $(document).ready(function () {
 
 <style lang="scss" scoped>
 @import './css/s.scss';
-@import './bootstrap-4.4.1-dist/css/bootstrap.min.css';
+// @import './bootstrap-4.4.1-dist/css/bootstrap.min.css';
 </style>
