@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container1">
     <video autoplay muted loop plays-inline class="back-video" src="./s/he1.mp4"></video>
   </div>
 </template>
@@ -17,5 +17,4 @@ $(document).ready(function () {
 
 <style lang="scss" scoped>
 @import './css/s.scss';
-@import './bootstrap-4.4.1-dist/css/bootstrap.min.css';
 </style>
