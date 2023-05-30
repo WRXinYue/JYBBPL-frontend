@@ -20,6 +20,7 @@
     "nprogress": "^0.2.0",
     "pinia": "^2.0.16",
     "prism-theme-vars": "^0.2.4",
+    "swiper": "^9.3.2",
     "vue": "^3.2.25",
     "vue-i18n": "^9.1.9",
     "vue-router": "^4.1.2"
