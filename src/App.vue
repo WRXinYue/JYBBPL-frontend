@@ -1,7 +1,7 @@
 <template>
   <el-container class="d">
     <el-header class="DaTableup">
-      <el-row :gutter="20" class="Tableup">
+      <el-row :gutter="20" class="Tableup" style="margin-right: 0">
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshizuo">
             <span>健身</span>
@@ -11,11 +11,15 @@
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshiyou">
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link>{{
-                button.text
-              }}</el-button>
+              <router-link to="/index" style="color: aliceblue">aa</router-link>
+              <router-link to="index">
+                <el-button v-for="button in buttons" :key="button.text" :type="button.type" link>{{
+                  button.text
+                }}</el-button>
+              </router-link>
             </div>
             <div>
+              <router-link to="/" style="color: aliceblue">aaaa</router-link>
               <el-button v-for="button in buttons" :key="button.text" :type="button.type" link>{{
                 button.text
               }}</el-button>
@@ -58,6 +62,11 @@
       </swiper>
     </el-main>
   </el-container>
+  <div class="main2">
+    <div>
+      <div></div>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -69,6 +78,7 @@ import 'swiper/swiper-bundle.css';
 import { Autoplay, Pagination, Navigation } from 'swiper';
 
 const modules = ref([Autoplay, Pagination, Navigation]);
+
 // 按钮
 const buttons = [
   { type: '', text: 'plain' },
@@ -93,7 +103,6 @@ const buttons = [
 .Tableup {
   height: 100%;
   @apply flex bg-dark-900 text-6xl;
-
   .yangshizuo {
     span:nth-child(1) {
       @apply text-orange-400;
@@ -115,5 +124,18 @@ const buttons = [
 .DaTableup {
   padding: 0;
   height: 90px;
+}
+.main2 {
+  height: 100%;
+  width: 100%;
+  div {
+    height: 5134px;
+    width: 1200px;
+    margin: 0 auto;
+    div {
+      width: 100%;
+      height: 935px;
+    }
+  }
 }
 </style>
