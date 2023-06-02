@@ -10,36 +10,10 @@
         </el-col>
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshiyou">
-            <div>
-              <el-button
-                v-for="button in buttons"
-                :key="button.text"
-                style="color: #ffb113"
-                :type="button.type"
-                link
-                @click="goPage"
-              >
-                {{ button.text }}
-              </el-button>
-            </div>
-            <div>
-              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
-                {{ button.text2 }}
-              </el-button>
-            </div>
-            <div>
-              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
-                {{ button.text3 }}
-              </el-button>
-            </div>
-            <div>
-              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
-                {{ button.text4 }}
-              </el-button>
-            </div>
-            <div>
-              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
-                {{ button.text5 }}
+            <!-- 导航按钮循环 -->
+            <div v-for="(button, index) in buttons" :key="index">
+              <el-button style="color: #ffb113" link @click="goPage">
+                {{ button }}
               </el-button>
             </div>
           </div>
@@ -47,6 +21,22 @@
       </el-row>
     </el-header>
     <el-main style="padding: 0">
+      <swiper
+        :space-between="30"
+        :centered-slides="true"
+        :autoplay="{ delay: 2500 }"
+        :navigation="true"
+        :modules="modules"
+        class="mySwiper bg-auto bg-dx"
+        style="height: 90vh"
+      >
+        <swiper-slide>
+          <img src="@/assets/img/fitness.webp" alt="aa" />
+        </swiper-slide>
+        <swiper-slide>
+          <img src="@/assets/img/fitness2.jpg" alt="aa" />
+        </swiper-slide>
+      </swiper>
       <div class="fom">
         <el-form :model="form" label-width="120px">
           <el-form-item label="姓名">
@@ -75,22 +65,6 @@
           </el-form-item>
         </el-form>
       </div>
-      <swiper
-        :space-between="30"
-        :centered-slides="true"
-        :autoplay="{ delay: 2500 }"
-        :navigation="true"
-        :modules="modules"
-        class="mySwiper bg-auto bg-dx"
-        style="height: 90vh"
-      >
-        <swiper-slide>
-          <img src="@/assets/img/fitness.webp" alt="aa" />
-        </swiper-slide>
-        <swiper-slide>
-          <img src="@/assets/img/fitness2.jpg" alt="aa" />
-        </swiper-slide>
-      </swiper>
     </el-main>
   </el-container>
   <div class="main2">
@@ -130,8 +104,7 @@ const onSubmit = () => {
 const modules = ref([Autoplay, Pagination, Navigation]);
 const router = useRouter();
 
-// 按钮
-const buttons = [{ type: '', text: '首页', text2: '关于我们', text3: '私课教练', text4: '在线报名', text5: '行业' }];
+const buttons = ['首页', '关于我们', '私课教练', '在线报名', '行业'];
 
 const goPage = () => {
   router.push({ name: 'home2' });
@@ -191,7 +164,8 @@ const goPage = () => {
   }
 }
 .fom {
-  width: 465px;
+  z-index: 2;
+  width: 100%;
   height: 467px;
   background-color: #ffb113;
   position: relative;
