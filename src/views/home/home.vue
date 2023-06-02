@@ -1,6 +1,6 @@
 <template>
-  <el-container class="d">
-    <el-header class="DaTableup">
+  <el-container class="">
+    <el-header class="DaTableup d">
       <el-row :gutter="20" class="Tableup" style="margin-right: 0">
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshizuo">
@@ -11,28 +11,35 @@
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshiyou">
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link @click="goPage">
+              <el-button
+                v-for="button in buttons"
+                :key="button.text"
+                style="color: #ffb113"
+                :type="button.type"
+                link
+                @click="goPage"
+              >
                 {{ button.text }}
               </el-button>
             </div>
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link @click="goPage">
-                {{ button.text }}
+              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
+                {{ button.text2 }}
               </el-button>
             </div>
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link @click="goPage">
-                {{ button.text }}
+              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
+                {{ button.text3 }}
               </el-button>
             </div>
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link @click="goPage">
-                {{ button.text }}
+              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
+                {{ button.text4 }}
               </el-button>
             </div>
             <div>
-              <el-button v-for="button in buttons" :key="button.text" :type="button.type" link @click="goPage">
-                {{ button.text }}
+              <el-button v-for="button in buttons" :key="button.text" link @click="goPage">
+                {{ button.text5 }}
               </el-button>
             </div>
           </div>
@@ -40,6 +47,34 @@
       </el-row>
     </el-header>
     <el-main style="padding: 0">
+      <div class="fom">
+        <el-form :model="form" label-width="120px">
+          <el-form-item label="姓名">
+            <el-input v-model="form.name" />
+          </el-form-item>
+          <el-form-item label="手机号码">
+            <el-input v-model="form.shouji" />
+          </el-form-item>
+          <el-form-item label="入班时间">
+            <el-col :span="11">
+              <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%" />
+            </el-col>
+            <el-col :span="2" class="text-center">
+              <span class="text-gray-500">-</span>
+            </el-col>
+            <el-col :span="11">
+              <el-time-picker v-model="form.date2" placeholder="Pick a time" style="width: 100%" />
+            </el-col>
+          </el-form-item>
+          <el-form-item label="留言">
+            <el-input v-model="form.desc" type="textarea" />
+          </el-form-item>
+          <el-form-item>
+            <el-button type="primary" @click="onSubmit">Create</el-button>
+            <!-- <el-button>Cancel</el-button> -->
+          </el-form-item>
+        </el-form>
+      </div>
       <swiper
         :space-between="30"
         :centered-slides="true"
@@ -73,19 +108,30 @@ import 'swiper/css/navigation';
 import 'swiper/swiper-bundle.css';
 // import { Navigation } from 'swiper';
 import { Autoplay, Pagination, Navigation } from 'swiper';
+import Color from 'element-plus/es/components/color-picker/src/color';
+// 表单引入
+import { reactive } from 'vue';
 
+const form = reactive({
+  name: '',
+  shouji: '',
+  region: '',
+  date1: '',
+  date2: '',
+  delivery: false,
+  type: [],
+  resource: '',
+  desc: '',
+});
+
+const onSubmit = () => {
+  console.log('submit!');
+};
 const modules = ref([Autoplay, Pagination, Navigation]);
 const router = useRouter();
 
 // 按钮
-const buttons = [
-  { type: '', text: 'plain' },
-  { type: 'primary', text: 'primary' },
-  { type: 'success', text: 'success' },
-  { type: 'info', text: 'info' },
-  { type: 'warning', text: 'warning' },
-  { type: 'danger', text: 'danger' },
-];
+const buttons = [{ type: '', text: '首页', text2: '关于我们', text3: '私课教练', text4: '在线报名', text5: '行业' }];
 
 const goPage = () => {
   router.push({ name: 'home2' });
@@ -97,9 +143,8 @@ const goPage = () => {
     width: 100%;
   }
 }
-
-。d {
-  min-width: 1600px;
+.d {
+  // width: 2117px;
 }
 
 .Tableup {
@@ -117,8 +162,13 @@ const goPage = () => {
     @apply flex justify-between items-center mt-4;
 
     div {
-      background-color: aqua;
-      @apply w-16 h-[55px];
+      button {
+        color: #eae880;
+        @apply text-lg;
+        :hover {
+          color: #ffb113;
+        }
+      }
     }
   }
 }
@@ -132,12 +182,22 @@ const goPage = () => {
   width: 100%;
   div {
     height: 5134px;
-    width: 1200px;
+    width: 100%;
     margin: 0 auto;
     div {
       width: 100%;
       height: 935px;
     }
+  }
+}
+.fom {
+  width: 465px;
+  height: 467px;
+  background-color: #ffb113;
+  position: relative;
+  form {
+    position: absolute;
+    margin: 0 auto;
   }
 }
 </style>
