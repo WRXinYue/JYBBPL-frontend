@@ -10,7 +10,7 @@
         </el-col>
         <el-col :lg="10">
           <div class="grid-content ep-bg-purple yangshiyou">
-            <!-- 导航按钮循环 -->
+            <!-- 按钮导航循环 -->
             <div v-for="(button, index) in buttons" :key="index">
               <el-button style="color: #ffb113" link @click="goPage">
                 {{ button }}
