@@ -12,7 +12,7 @@
           <div class="grid-content ep-bg-purple yangshiyou">
             <!-- 导航按钮循环 -->
             <div v-for="(button, index) in buttons" :key="index">
-              <el-button style="color: #ffb113" link @click="goPage">
+              <el-button link @click="goPage">
                 {{ button }}
               </el-button>
             </div>
@@ -20,7 +20,35 @@
         </el-col>
       </el-row>
     </el-header>
-    <el-main style="padding: 0">
+    <!-- <div class="fom">
+      <el-form :model="form" label-width="120px">
+        <el-form-item label="姓名">
+          <el-input v-model="form.name" />
+        </el-form-item>
+        <el-form-item label="手机号码">
+          <el-input v-model="form.shouji" />
+        </el-form-item>
+        <el-form-item label="入班时间">
+          <el-col :span="11">
+            <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%" />
+          </el-col>
+          <el-col :span="2" class="text-center">
+            <span class="text-gray-500">-</span>
+          </el-col>
+          <el-col :span="11">
+            <el-time-picker v-model="form.date2" placeholder="Pick a time" style="width: 100%" />
+          </el-col>
+        </el-form-item>
+        <el-form-item label="留言">
+          <el-input v-model="form.desc" type="textarea" />
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="onSubmit">Create</el-button>
+          <el-button>Cancel</el-button> -->
+    <!-- </el-form-item>
+      </el-form>
+    </div> -->
+    <el-main style="padding: 0" class="emain">
       <swiper
         :space-between="30"
         :centered-slides="true"
@@ -37,39 +65,138 @@
           <img src="@/assets/img/fitness2.jpg" alt="aa" />
         </swiper-slide>
       </swiper>
-      <div class="fom">
-        <el-form :model="form" label-width="120px">
-          <el-form-item label="姓名">
-            <el-input v-model="form.name" />
-          </el-form-item>
-          <el-form-item label="手机号码">
-            <el-input v-model="form.shouji" />
-          </el-form-item>
-          <el-form-item label="入班时间">
-            <el-col :span="11">
-              <el-date-picker v-model="form.date1" type="date" placeholder="Pick a date" style="width: 100%" />
-            </el-col>
-            <el-col :span="2" class="text-center">
-              <span class="text-gray-500">-</span>
-            </el-col>
-            <el-col :span="11">
-              <el-time-picker v-model="form.date2" placeholder="Pick a time" style="width: 100%" />
-            </el-col>
-          </el-form-item>
-          <el-form-item label="留言">
-            <el-input v-model="form.desc" type="textarea" />
-          </el-form-item>
-          <el-form-item>
-            <el-button type="primary" @click="onSubmit">Create</el-button>
-            <!-- <el-button>Cancel</el-button> -->
-          </el-form-item>
-        </el-form>
-      </div>
     </el-main>
   </el-container>
   <div class="main2">
     <div>
-      <div></div>
+      <div>
+        <h1>课程介绍</h1>
+        <h2>如果你体型均称有可塑性，又热爱运动，我们让你成为优秀教练同时拥有体型不是梦。</h2>
+        <img src="@/assets/img/xian.png" alt="aa" />
+        <div class="a">
+          <swiper
+            :space-between="30"
+            :centered-slides="true"
+            :autoplay="{
+              delay: 2000,
+              disableOnInteraction: false,
+            }"
+            :pagination="{
+              clickable: true,
+            }"
+            :navigation="false"
+            :grab-cursor="true"
+            :effect="'creative'"
+            :creative-effect="{
+              prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+              },
+              next: {
+                translate: ['100%', 0, 0],
+              },
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide><img src="@/assets/img/a1.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="@/assets/img/a2.jpg" alt="" /></swiper-slide
+            ><swiper-slide><img src="@/assets/img/a3.jpg" alt="" /></swiper-slide>
+            >
+          </swiper>
+        </div>
+        <div class="b">
+          <swiper
+            :space-between="30"
+            :centered-slides="true"
+            :autoplay="{
+              delay: 1000,
+              disableOnInteraction: false,
+            }"
+            :pagination="{
+              clickable: true,
+            }"
+            :navigation="false"
+            :grab-cursor="true"
+            :effect="'creative'"
+            :creative-effect="{
+              prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+              },
+              next: {
+                translate: ['100%', 0, 0],
+              },
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide><img src="@/assets/img/a1.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="@/assets/img/a2.jpg" alt="" /></swiper-slide
+            ><swiper-slide><img src="@/assets/img/a3.jpg" alt="" /></swiper-slide>
+            >
+          </swiper>
+        </div>
+        <div class="c">
+          <swiper
+            :space-between="30"
+            :centered-slides="true"
+            :autoplay="{
+              delay: 1500,
+              disableOnInteraction: false,
+            }"
+            :pagination="{
+              clickable: true,
+            }"
+            :navigation="false"
+            :grab-cursor="true"
+            :effect="'creative'"
+            :creative-effect="{
+              prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+              },
+              next: {
+                translate: ['100%', 0, 0],
+              },
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide><img src="@/assets/img/a1.jpg" alt="" /></swiper-slide>
+            <swiper-slide><img src="@/assets/img/a2.jpg" alt="" /></swiper-slide
+            ><swiper-slide><img src="@/assets/img/a3.jpg" alt="" /></swiper-slide>
+            >
+          </swiper>
+        </div>
+        <div class="d">
+          <h1>私教初级</h1>
+          <div>
+            适合健身健美爱好者 课程包含：心肺复苏、基础私教理论 基础私教实践、私教销售。 共计140课时，30天的学习时间
+          </div>
+          <el-row class="mb-4 butn">
+            <el-button type="primary">Primary</el-button>
+          </el-row>
+        </div>
+        <div class="e">
+          <h1>私教中级课程</h1>
+          <div>
+            适合健身健美爱好者 课程包含：心肺复苏、基础私教理论 基础私教实践、私教销售。 共计140课时，30天的学习时间
+          </div>
+          <el-row class="mb-4 butn">
+            <el-button type="primary">Primary</el-button>
+          </el-row>
+        </div>
+        <div class="g">
+          <h1>私教课程</h1>
+          <div>
+            适合健身健美爱好者 课程包含：心肺复苏、基础私教理论 基础私教实践、私教销售。 共计140课时，30天的学习时间
+          </div>
+          <el-row class="mb-4 butn">
+            <el-button type="primary">Primary</el-button>
+          </el-row>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -81,10 +208,43 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/swiper-bundle.css';
 // import { Navigation } from 'swiper';
-import { Autoplay, Pagination, Navigation } from 'swiper';
+// import { EffectCreative } from 'swiper';
+import { Autoplay, Pagination, Navigation, EffectCreative } from 'swiper';
 import Color from 'element-plus/es/components/color-picker/src/color';
 // 表单引入
 import { reactive } from 'vue';
+
+const ascii = `
+
+││││││╞╞┌└└││┌│││└┌││┌┌└│┌│└││││││┌╞││└└│┌│││││┌││││││┌│││└│┌┌╞└│││││││││││││││││││││││││││││││││││
+││││││││││││┌┌││└││┌┌││││┌│││└││┌┌└│└││││││││││┌││┌│││┌┌││┌││╞│││└││││││││││││││││││││││││││││││││││
+
+│││││││││││░││░││└││││┌│││└││┌└││└││││╞││└│││││└│││││││││╞│┌└┌│││└││││││││││││││││││││││││││││││││││
+
+││││││││▄▒░░▒▒│││││││░▒█████████▄│││░▄▒▄▄▄░▄█▄▄▄╔░▒███████████▒░└│││││││││││││││││││││││││││││││││││
+
+││└│░││▄▓▒░▓███████▒│║▓████████▓▒│╔▄▒▀▓▓▒▀▓▀▀▓▒▀╚││▄▓▒│▒▓███▒▀▀│░│└│││││││││││││││││││││││││││││││││
+
+││└││╔▄▓█▒▀▀│░▒▒░╣▀░│║▀▓█▀▀▀▀▀█▓░│╚░▄▄▄▒▄▄▒▄▄▄▄▄│║▒▓▀▀▀███▀▀▀▀▀╣│└││││││││││││││││││││││││││││││││││
+
+│││││╣▀▓█░░▒▒╣▓▒╣█▒░╣▀▀▀▀▀███▀▀▀▀▀╝│╚║░▓▓▓▓▓▒│╜╚││║▓█▀▀███▀▀█▒░│││││││││││││││││││││││││││││││││││││
+
+││└└╞││▓█▓▀▀└║▓▒│╚▀▀│░▄█┤│░▓█▀▀▀▀╝┌╔▄▒▓▀║▒▒░▀▓▄▄││║▓█▄▄▓▓▄▄▄▓█░╞┌└││││││││││││││││││││││││││││││││││
+
+└└└│└││▓▓░│╖▄█▓▒│││║▄▓▀▀▀▓█▓█▄▄▄▄▄▒▀▀╝▀▀▀▓▓▀▀▀░▀▀┌│▀╝░╞░▓▓▄▓▓█▄┌┌│││││││││││││││││││││││││││││││││││
+
+││││╞│╞└││┌││││└│┌││└││┌│└└│└││└│└│┌└││└╚▀▀│┌│││░╚▀▀▀▀▀▀░│└└│╚▀╝│└││││││││││││││││││││││││││││││││││
+
+│┌┌│└└│││┌│││╞││└││││││││└│││└│┌│└│││││││││└│░││└│││┌└│┌││┌│░│││││││││││││││││││││││││││││││││││││││
+
+│││┌││││┌││││││││││││┌│││││┌│┌│││││┌│││││││││││││││└┌│┌│┌││┌││││││││││││││││││││││││││││││││││││││││
+
+││││││└└└│││││││││││││││││││││││││││││││││││││││
+
+
+
+`;
+console.log(`%c${ascii}`, 'color:#e59de3');
 
 const form = reactive({
   name: '',
@@ -101,7 +261,7 @@ const form = reactive({
 const onSubmit = () => {
   console.log('submit!');
 };
-const modules = ref([Autoplay, Pagination, Navigation]);
+const modules = ref([Autoplay, Pagination, Navigation, EffectCreative]);
 const router = useRouter();
 
 const buttons = ['首页', '关于我们', '私课教练', '在线报名', '行业'];
@@ -155,22 +315,147 @@ const goPage = () => {
   width: 100%;
   div {
     height: 5134px;
-    width: 100%;
+    width: 1200px;
     margin: 0 auto;
     div {
       width: 100%;
       height: 935px;
+      h1 {
+        @apply text-center text-6xl;
+        margin-top: 60px;
+      }
+      h2 {
+        margin-top: 30px;
+        @apply text-center;
+      }
+      img {
+        margin-top: 20px;
+        margin-bottom: 60px;
+      }
+      div {
+        @apply inline-block;
+        width: 331px;
+        height: 365px;
+        margin-left: 62px;
+        // background-color: #eae880;
+      }
+      .a {
+        margin-left: 40px;
+        div {
+          margin-left: 0px;
+          img {
+            margin: 0 auto;
+          }
+        }
+      }
+      .b {
+        div {
+          margin-left: 0px;
+        }
+        img {
+          margin: 0 auto;
+        }
+      }
+      .c {
+        div {
+          margin-left: 0px;
+        }
+        img {
+          margin: 0 auto;
+        }
+      }
+      .d {
+        display: block;
+        position: absolute;
+        // background-color: #ffb113;
+        height: 320px;
+        margin-bottom: 15px;
+        margin-left: 40px;
+        h1 {
+          @apply text-2xl font-medium mt-8 mb-4;
+        }
+        div {
+          @apply w-[244px] h-[100px];
+          margin: auto 43px;
+        }
+        .butn {
+          button {
+            @apply bg-dark-500
+             border-dark-400
+              w-[110px]
+               h-[35px]
+                mt-10
+                 ml-16
+                  text-xl;
+            border-radius: 0px;
+          }
+        }
+      }
+      .e {
+        display: block;
+        position: absolute;
+        // background-color: #ffb113;
+        height: 320px;
+        margin-bottom: 15px;
+        margin-left: 20.5%;
+        h1 {
+          @apply text-2xl font-medium mt-8 mb-4;
+        }
+        div {
+          @apply w-[244px] h-[100px];
+          margin: auto 43px;
+        }
+        .butn {
+          button {
+            @apply bg-dark-500
+             border-dark-400
+              w-[110px]
+               h-[35px]
+                mt-10 ml-16
+            text-xl;
+            border-radius: 0px;
+          }
+        }
+      }
+      .g {
+        display: block;
+        position: absolute;
+        // background-color: #ffb113;
+        height: 320px;
+        margin-bottom: 15px;
+        margin-left: 39%;
+        h1 {
+          @apply text-2xl font-medium mt-8 mb-4;
+        }
+        div {
+          @apply w-[244px] h-[100px];
+          margin: auto 43px;
+        }
+        .butn {
+          button {
+            @apply bg-dark-500
+             border-dark-400
+              w-[110px] 
+             h-[35px] 
+             mt-10
+              ml-16 
+            text-xl;
+
+            border-radius: 0px;
+          }
+        }
+      }
     }
   }
 }
 .fom {
+  display: flex;
   z-index: 2;
-  width: 100%;
+  width: 560px;
   height: 467px;
   background-color: #ffb113;
-  position: relative;
+  margin: 0% 0 0 50%;
   form {
-    position: absolute;
     margin: 0 auto;
   }
 }
